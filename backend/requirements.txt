@@ -1,0 +1,36 @@
+# Веб-фреймворк
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# База данных и ORM
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+alembic==1.12.1  # для миграций
+asyncpg==0.29.0  # для асинхронной работы
+
+# Векторные операции и эмбеддинги
+pgvector==0.2.0  # клиент для работы с pgvector
+numpy==1.24.3
+openai==1.3.0  # для создания эмбеддингов
+# или альтернативы:
+# sentence-transformers==2.2.2
+# chromadb==0.4.18  # если нужно кеширование эмбеддингов
+
+# Обработка документов
+python-multipart==0.0.6  # для загрузки файлов
+pypdf==3.17.0  # для PDF
+python-docx==1.1.0  # для Word
+unstructured==0.10.30  # для различных форматов
+
+# Валидация
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Утилиты
+python-dotenv==1.0.0
+loguru==0.7.2  # логирование
+tenacity==8.2.3  # retry логика
+
+# Аутентификация (если нужно)
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
