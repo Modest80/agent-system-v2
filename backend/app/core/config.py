@@ -6,9 +6,9 @@ class Settings(BaseSettings):
     # База данных
     DATABASE_HOST: str = "localhost"
     DATABASE_PORT: int = 5432
-    DATABASE_USER: str = "postgres"
-    DATABASE_PASSWORD: str = ""
-    DATABASE_NAME: str = "agentsystemv2"
+    DATABASE_USER: str = "raguser"
+    DATABASE_PASSWORD: str = "ragpass"
+    DATABASE_NAME: str = "ragdb"
     
     # Embedding модель
     # EMBEDDING_MODEL: str = "text-embedding-ada-002"  # OpenAI
@@ -44,5 +44,6 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         case_sensitive = True
+        extra = 'ignore'
 
 settings = Settings()

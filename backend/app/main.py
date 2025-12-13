@@ -5,6 +5,11 @@ from contextlib import asynccontextmanager
 
 from app.database import engine, async_engine
 from app.models.base import Base
+from datetime import datetime
+
+from app.api.router import api_router
+
+VERSION = "0.2.1"
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -22,8 +27,8 @@ async def lifespan(app: FastAPI):
     await async_engine.dispose()
 
 app = FastAPI(
-    title="RAG System API",
-    version="1.0.0",
+    title="Agent System V2",
+    version=VERSION,
     lifespan=lifespan
 )
 
@@ -36,10 +41,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Подключаем маршруты
+app.include_router(api_router)
+
 @app.get("/")
 async def root():
-    return {"message": "RAG System API", "version": "1.0.0"}
+    return {"message": "Agent System V2", "version": VERSION}
 
 @app.get("/health")
-async def health_check():
-    return {"status": "healthy"}
+async def health_check():    
+    return {
+        "status": "healthy",
+        "date": datetime.now().strftime("%d.%m.%Y"),
+        "time": datetime.now().strftime("%H:%M:%S"),
+    }

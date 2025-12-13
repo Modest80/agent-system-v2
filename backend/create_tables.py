@@ -10,6 +10,7 @@ from app.models.category import Category
 from app.models.document import Document
 from app.models.document_category import document_categories
 from app.models.chunk import Chunk
+from pgvector.sqlalchemy import Vector
 
 print("Создание таблиц в правильном порядке...")
 
