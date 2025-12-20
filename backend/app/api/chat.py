@@ -1,5 +1,6 @@
 from typing import List
 from app.models.chat import Chat
+from app.services.chat_service import ChatService
 from pydantic import BaseModel
 
 from fastapi.responses import JSONResponse
@@ -15,9 +16,13 @@ def get_chats():
     """
     Получить список чатов
     """
+    # Через сервис получить список чатов
+    chatService = ChatService()
+    chats = chatService.get_chats();
+    # Вернуть список чатов клиенту
     return JSONResponse(
-        status_code=405,
-        content={"message": "Не реализовано"}
+        status_code=200,
+        content=chats
     )
 
 @router.post("/")

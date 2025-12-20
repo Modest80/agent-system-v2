@@ -1,0 +1,9 @@
+-- users
+ id int
+ email varchar
+ password varchar
+ created_at int
+ updated_at int
+-- dialogs/chats
+-- messages
+-- documents
