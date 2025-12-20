@@ -11,6 +11,8 @@ from app.models.document import Document
 from app.models.document_category import document_categories
 from app.models.chunk import Chunk
 from pgvector.sqlalchemy import Vector
+from app.models.chat import Chat
+from app.models.message import Message
 
 print("Создание таблиц в правильном порядке...")
 
@@ -20,7 +22,9 @@ Base.metadata.create_all(bind=engine, tables=[
     Category.__table__,
     Document.__table__,
     document_categories,
-    Chunk.__table__
+    Chunk.__table__,
+    Chat.__table__,
+    Message.__table__
 ])
 
 print("Таблицы успешно созданы!")
