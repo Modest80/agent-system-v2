@@ -29,7 +29,8 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Agent System V2",
     version=VERSION,
-    lifespan=lifespan
+    lifespan=lifespan,
+    tags=["System"]
 )
 
 # CORS
