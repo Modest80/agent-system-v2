@@ -9,3 +9,16 @@
  * [+] Создать модели для таблиц (ORM)
  * [ ] Запустить приложение командой: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
  * [ ] собрать и запустить Docker контейер для PostgreSQL командой: docker-compose up --build
+
+## К 27.12.2025
+
+ * [ ] Создать сервис - UserService - Константин
+ * [ ] Создать сервис - DocumentService - Александр
+ * [ ] Создать сервис - ChunkService - Влад
+ * [ ] Создать сервис - CategoryService - Никита
+ * [ ] Создать сервис - AuthService - Михаил
+ * [ ] Создать репозиторий - UserRepository - Михаил
+ * [ ] Создать репозиторий - DocumentRepository - Александр
+ * [ ] Создать репозиторий - ChunkRepository - Влад
+ * [ ] Создать репозиторий - CategoryRepository - Никита
+

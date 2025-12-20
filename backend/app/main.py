@@ -30,7 +30,12 @@ app = FastAPI(
     title="Agent System V2",
     version=VERSION,
     lifespan=lifespan,
-    tags=["System"]
+    openapi_tags=[
+        {
+            "name":"Users - Пользователи",
+            "description":"Маршруты для работы с пользователями"
+        }
+    ]
 )
 
 # CORS
@@ -45,11 +50,11 @@ app.add_middleware(
 # Подключаем маршруты
 app.include_router(api_router)
 
-@app.get("/")
+@app.get("/", tags=["Root - Основной"])
 async def root():
     return {"message": "Agent System V2", "version": VERSION}
 
-@app.get("/health")
+@app.get("/health", tags=["System - Система"])
 async def health_check():    
     return {
         "status": "healthy",

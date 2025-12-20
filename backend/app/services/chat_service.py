@@ -1,7 +1,11 @@
 # Сервис для работы с чатами
-
+from typing import List, Optional, Dict, Any
+from sqlalchemy.orm import Session
+from app.repositories.chat_repository import ChatRepository
 
 class ChatService:
+    def __init__(self, chat_repo: ChatRepository):
+        self.chat_repo = chat_repo
 
     def create_chat(self, title: str):
         # Создание чата
