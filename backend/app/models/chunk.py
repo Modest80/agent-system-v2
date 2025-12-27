@@ -1,10 +1,10 @@
 # app/models/chunk.py
-import numpy as np
 from sqlalchemy import Column, Integer, Text, ForeignKey, CheckConstraint
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID, JSONB
 from pgvector.sqlalchemy import Vector
 from .base import BaseModel
+from sqlalchemy import UniqueConstraint, Index
 
 class Chunk(BaseModel):
     __tablename__ = 'chunks'
@@ -22,10 +22,14 @@ class Chunk(BaseModel):
     document = relationship('Document', back_populates='chunks')
     
     # Ограничения
+    
+
     __table_args__ = (
         CheckConstraint('chunk_index >= 0', name='chk_chunkindex_non_negative'),
         CheckConstraint('LENGTH(TRIM(text)) > 0', name='chk_text_not_empty'),
         CheckConstraint('LENGTH(text) <= 10000', name='chk_max_chunk_size'),
+        UniqueConstraint('document_id', 'chunk_index', name='uq_chunks_document_chunk_index'),
+        Index('ix_chunks_document_id_chunk_index', 'document_id', 'chunk_index'),
     )
     
     def __repr__(self):
