@@ -8,4 +8,3 @@ api_router.include_router(user.router)
 api_router.include_router(chat.router)
 api_router.include_router(document.router)
 api_router.include_router(chunk.router)
-

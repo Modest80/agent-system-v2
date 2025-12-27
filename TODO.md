@@ -14,11 +14,11 @@
 
  * [ ] Создать сервис - UserService - Константин
  * [ ] Создать сервис - DocumentService - Александр
- * [ ] Создать сервис - ChunkService - Влад
+ * [+] Создать сервис - ChunkService - Влад
  * [ ] Создать сервис - CategoryService - Никита
  * [ ] Создать сервис - AuthService - Михаил
  * [ ] Создать репозиторий - UserRepository - Михаил
  * [ ] Создать репозиторий - DocumentRepository - Александр
- * [ ] Создать репозиторий - ChunkRepository - Влад
+ * [+] Создать репозиторий - ChunkRepository - Влад
  * [ ] Создать репозиторий - CategoryRepository - Никита
 
